@@ -9,7 +9,10 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<Layout>
+<Layout
+    title="Coding Blog"
+    description="Welcome to my blog! Here you will find articles on web development, programming, and technology. I hope you find them helpful and informative. If you have any questions or comments, please feel free to reach out to me. I would love to hear from you!"
+>
 	<main class="blog-page container">
         <h1>Coding &#60;&#47;&#62; Blog</h1>
         <p>
@@ -20,7 +23,7 @@ const posts = (await getCollection('blog')).sort(
                 <article id={post.slug} class="post">
                     <a href={`/blog/${post.slug}`} class="post__item" >
                         <Image
-                            src={post.data.heroImage}
+                            src={post.data.heroImage ?? ''}
                             alt={post.data.title}
                             class="post__image"
                             loading="eager"

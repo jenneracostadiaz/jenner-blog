@@ -18,7 +18,10 @@ const { Content } = await post.render();
 
 ---
 
-<Layout>
+<Layout
+    title={post.data.title}
+    description={post.data.description}
+>
     <main class="container">
         <article>
             <div class="hero-image">

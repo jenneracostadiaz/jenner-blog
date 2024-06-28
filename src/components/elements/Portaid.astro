@@ -1,7 +1,7 @@
 ---
 import ScrollDown from "./ScrollDown.astro";
 
-const { id } = Astro.props;
+const { link } = Astro.props;
 ---
 
 <section id="portaid" class="portaid">
@@ -14,7 +14,7 @@ const { id } = Astro.props;
             <a href="/projects" class="portaid__cta-link">View my projects</a>
         </div>
         <div class="portaid__scroll">
-            <ScrollDown link="#philosophy" />
+            <ScrollDown link={link} />
         </div>
     </div>
 </section>
