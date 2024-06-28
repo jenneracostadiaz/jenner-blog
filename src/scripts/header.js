@@ -13,4 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.body.style.paddingTop = 0;
 		}
 	});
+
+	const hamburger = document.querySelector('.hamburger');
+	const navLinks = document.querySelector('#mobil-nav');
+
+	hamburger.addEventListener('click', () => {
+		navLinks.classList.toggle('mobil-nav--open');
+		hamburger.classList.toggle('hamburger--open');
+	});
 });

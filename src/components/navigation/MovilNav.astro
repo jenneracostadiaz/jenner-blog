@@ -1,0 +1,49 @@
+---
+const {links} = Astro.props;
+---
+
+<nav id="mobil-nav" class="mobil-nav">
+    {
+        links.map((link: any) => (
+            <a class="mobil-nav__item" href={link.href}>{link.text}</a>
+        ))
+
+    }
+</nav>
+
+<style>
+    .mobil-nav{
+        position: fixed;
+        z-index: 1000;
+        bottom: 1em;
+        left: 1em;
+        right: 1em;
+        background-color: rgba(0, 0, 0, 0.75);
+        padding: 2em;
+        border-radius: 1em;
+        box-shadow: 0 0 15px rgba(39, 39, 39, 0.3);
+        backdrop-filter: blur(5px);
+        transform: translateY(100%);
+        transition: transform 0.5s;
+    }
+
+    .mobil-nav--open{
+        transform: translateY(0);
+    }
+
+    .mobil-nav__item{
+        display: block;
+        color: var(--white);
+        font-size: 1.2em;
+        font-weight: 300;
+        text-align: center;
+        text-decoration: none;
+        padding: .7em;
+        border-radius: 1em;
+    }
+
+    .mobil-nav__item:hover{
+        color: var(--gray-light);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+</style>

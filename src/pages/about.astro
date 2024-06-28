@@ -2,8 +2,6 @@
 import { Image } from "astro:assets";
 import BtnMeeting from "../components/elements/BtnMeeting.astro";
 import Layout from "../layouts/Layout.astro";
-
-import portaid from "/images/philosophy.png";
 ---
 
 <Layout>
@@ -13,6 +11,7 @@ import portaid from "/images/philosophy.png";
 			srcset="/images/philosophy.webp, /images/philosophy.jpg"
 			src="/images/philosophy.jpg"
 			alt="my Proyect"
+			loading="eager"
 			width="992" height="500"
 		/>
 		<Image
@@ -20,6 +19,7 @@ import portaid from "/images/philosophy.png";
 			srcset="/images/jenneracostadiaz.webp, /images/jenneracostadiaz.jpg"
 			src="/images/jenneracostadiaz.jpg"
 			alt="I'm Jenner Acosta Diaz"
+			loading="eager"
 			width="300" height="300"
 		/>
 		<h1>About me</h1>
