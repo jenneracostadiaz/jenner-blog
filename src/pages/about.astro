@@ -1,12 +1,74 @@
 ---
+import { Image } from "astro:assets";
+import BtnMeeting from "../components/elements/BtnMeeting.astro";
 import Layout from "../layouts/Layout.astro";
+
+import portaid from "/images/philosophy.png";
 ---
 
 <Layout>
 	<main class="container">
+		<Image
+			class="portaid"
+			srcset="/images/philosophy.webp, /images/philosophy.jpg"
+			src="/images/philosophy.jpg"
+			alt="my Proyect"
+			width="992" height="500"
+		/>
+		<Image
+			class="profile"
+			srcset="/images/jenneracostadiaz.webp, /images/jenneracostadiaz.jpg"
+			src="/images/jenneracostadiaz.jpg"
+			alt="I'm Jenner Acosta Diaz"
+			width="300" height="300"
+		/>
 		<h1>About me</h1>
 		<p>
 			As a developer, I believe in the power of technology to make the world a better place. I am passionate about creating software that is both functional and beautiful. I am always looking for new ways to improve my skills and learn new technologies. I am a strong believer in the power of collaboration and am always looking for new opportunities to work with others. I am excited to be a part of the tech community and am always looking for new ways to contribute. I am passionate about creating software that is both functional and beautiful. I am always looking for new ways to improve my skills and learn new technologies. I am a strong believer in the power of collaboration and am always looking for new opportunities to work with others. I am excited to be a part of the tech community and am always looking for new ways to contribute.
 		</p>
+		<p>
+			<BtnMeeting />
+		</p>
 	</main>
 </Layout>
+
+<style>
+	.container{
+		width: var(--d-lg);
+	}
+
+	.portaid{
+		width: 100%;
+		height: 50vh;
+		max-height: 400px;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 1rem;
+		filter: blur(5px);
+	}
+
+	.profile{
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		margin: -150px auto 0;
+		position: relative;
+		z-index: 1;
+		box-shadow: 0 0 0 10px var(--white);
+		filter: drop-shadow(0 0 1.5rem var(--black))
+	}
+
+	h1{
+		text-align: center;
+		margin-top: 4rem;
+	}
+
+	p{
+		margin-top: 3rem;
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: 200;
+	}
+
+	
+</style>

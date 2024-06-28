@@ -1,4 +1,5 @@
 ---
+import Philosophy from "../components/elements/Philosophy.astro";
 import Portaid from "../components/elements/Portaid.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -9,21 +10,7 @@ import Layout from "../layouts/Layout.astro";
 		<Portaid />
 
 		<section id="philosophy" class="container">
-			<div class="philosophy">
-				<div class="philosophy__content">
-					<h2>My Philosophy</h2>
-					<p>
-						As a developer, I believe in the power of technology to make the world a better place. I am passionate about creating software that is both functional and beautiful.
-					</p>
-					<p>
-						I am passionate about creating software that is both functional and beautiful. I am always looking for new ways to improve my skills and learn new technologies.
-					</p>
-					<p>
-						<a href="https://calendar.app.google/c9d2SqsccCBPJf5H8" target="_blank" class="hilosophy__button">Let's start a meeting</a>
-					</p>
-				</div>
-				<img src="/images/philosophy.png" alt="My Philosophy" />
-			</div>
+			<Philosophy />
 		</section>
 	</main>
 </Layout>
@@ -33,44 +20,5 @@ import Layout from "../layouts/Layout.astro";
 		display: flex;
 		flex-direction: column;
 		gap: 2em;
-	}
-
-	.philosophy {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: center;
-		gap: 2rem;
-		padding: 2rem 0;
-	}
-
-	.philosophy h2 {
-		font-size: 1.2rem;
-		font-weight: 300;
-		color: var(--gray-dark);
-	}
-
-	.philosophy p {
-		font-size: 1.3em;
-		font-weight: 700;
-		color: var(--gray-light);
-		margin-bottom: 1.5em;
-	}
-
-	.hilosophy__button{
-		background-color: var(--black);
-		color: var(--accent);
-		border: 2px solid var(--accent);
-		padding: .5em 1.5em;
-		border-radius: 1.2em;
-		text-decoration: none;
-		font-size: .7em;
-		font-weight: 300;
-		text-transform: uppercase;
-	}
-
-	@media (max-width: 768px) {
-		.philosophy {
-			grid-template-columns: 1fr;
-		}
 	}
 </style>

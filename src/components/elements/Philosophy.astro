@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import BtnMeeting from "./BtnMeeting.astro";
+
+
+---
+<div class="philosophy">
+    <div class="philosophy__content">
+        <h2>My Philosophy</h2>
+        <p>
+            As a developer, I believe in the power of technology to make the world a better place. I am passionate about creating software that is both functional and beautiful.
+        </p>
+        <p>
+            I am passionate about creating software that is both functional and beautiful. I am always looking for new ways to improve my skills and learn new technologies.
+        </p>
+        <p>
+			<BtnMeeting />
+        </p>
+    </div>
+    <!-- <img src="/images/philosophy.png" alt="My Philosophy" /> -->
+	<Image
+		class="portaid"
+		srcset="/images/philosophy.webp, /images/philosophy.jpg"
+		src="/images/philosophy.jpg"
+		alt="my Proyect"
+		width="992" height="500"
+	/>
+</div>
+
+<style>
+    .philosophy {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		gap: 2rem;
+		padding: 2rem 0;
+	}
+
+	.philosophy h2 {
+		font-size: 1.2rem;
+		font-weight: 300;
+		color: var(--gray-dark);
+	}
+
+	.philosophy p {
+		font-size: 1.3em;
+		font-weight: 700;
+		color: var(--gray-light);
+		margin-bottom: 1.5em;
+	}
+
+	@media (max-width: 768px) {
+		.philosophy {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
