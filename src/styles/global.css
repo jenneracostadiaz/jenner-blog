@@ -9,16 +9,38 @@
 :root {
 	--accent: #2173e6;
 	--accent-dark: #1a5bbf;
+	--accent-light: #589af7;
 	--black: #161513;
 	--white: #e8e7ea;
 	--gray-light: #cfcfcf;
 	--gray-dark: #909090;
+
 	--d-xs: 320px;
 	--d-sm: 576px;
 	--d-md: 768px;
 	--d-lg: 992px;
 	--d-xl: 1200px;
 	--d-2xl: 1400px;
+
+	--accent-rgb: 33, 115, 230;
+	--accent-light-rgb: 88, 154, 247;
+	--accent-dark-rgb: 26, 91, 191;
+	--black-rgb: 22, 21, 19;
+	--white-rgb: 232, 231, 234;
+	--gray-light-rgb: 207, 207, 207;
+	--gray-dark-rgb: 144, 144, 144;
+	--accent-gradient: linear-gradient(
+		45deg,
+		rgb(var(--accent-rgb)),
+		rgb(var(--gray-light-rgb)) 15%,
+		var(--white) 60%
+	);
+	--accent-gradient-dark: linear-gradient(
+		45deg,
+		rgb(var(--accent-dark-rgb)),
+		rgb(var(--white-rgb)) 15%,
+		var(--white) 60%
+	);
 }
 
 html {
@@ -37,6 +59,12 @@ body {
 	color: var(--white);
 	font-size: 20px;
 	line-height: 1.7;
+	background-image: radial-gradient(
+		circle,
+		rgba(214, 214, 214, 0.05) 2px,
+		transparent 2px
+	);
+	background-size: 20px 20px;
 }
 
 h1,
