@@ -1,0 +1,102 @@
+---
+import ScrollDown from "./ScrollDown.astro";
+
+const { id } = Astro.props;
+---
+
+<section id="portaid" class="portaid">
+    <div class="portaid__container">
+        <p class="portaid__subtitle">Hi people 👋</p>
+        <h1 class="portaid__title">
+            I'm <span class="portaid__highlight">Jenner</span>, a fullStack web developer.
+        </h1>
+        <p class="portaid__cta">
+            <a href="/projects" class="portaid__cta-link">View my projects</a>
+        </div>
+        <div class="portaid__scroll">
+            <ScrollDown link="#philosophy" />
+        </div>
+    </div>
+</section>
+
+<style>
+	.portaid {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		height: 80vh;
+        min-height: 40rem;
+	}
+
+	.portaid__container {
+		width: var(--d-xl);
+		max-width: calc(100% - 4em);
+		margin: 0 auto;
+		text-align: left;
+	}
+
+	.portaid__subtitle {
+		color: var(--gray-dark);
+		font-size: 1rem;
+	}
+
+	.portaid__title {
+		font-size: 3rem;
+	}
+
+	@media (min-width: 768px) {
+		.portaid__title {
+			font-size: 4rem;
+		}
+	}
+	@media (min-width: 992px) {
+		.portaid__title {
+			width: 80%;
+			font-size: 5rem;
+		}
+	}
+	@media (min-width: 1200px) {
+		.portaid__title {
+			width: 100%;
+			font-size: 6rem;
+		}
+	}
+
+	.portaid__highlight {
+		color: var(--accent);
+	}
+
+	.portaid__cta {
+		margin-top: 2rem;
+	}
+
+	.portaid__cta-link {
+		color: var(--accent);
+		text-decoration: none;
+		padding: 0.5rem 0rem;
+		margin-left: 3rem;
+		position: relative;
+	}
+
+	.portaid__cta-link:hover {
+		border-bottom: 2px solid var(--accent);
+	}
+
+	.portaid__cta-link::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: -3rem;
+		display: block;
+		width: 2rem;
+		height: 1px;
+		background-color: var(--white);
+		margin-left: 0.5rem;
+	}
+
+	.portaid__scroll {
+		position: absolute;
+		bottom: 2rem;
+	}
+</style>

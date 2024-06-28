@@ -1,0 +1,122 @@
+---
+import HeaderLinks from "./HeaderLinks.astro";
+import { SITE_TITLE, SITE_SOCIAL } from "../../consts";
+
+
+---
+<header id="main-header">
+    <nav class="container">
+        <h2><a href="/">{ SITE_TITLE }</a></h2>
+        <div class="main-menu">
+            <div class="internal-links">
+                <HeaderLinks href="/" > Home </HeaderLinks>
+                <HeaderLinks href="/about" > About </HeaderLinks>
+                <!-- <HeaderLinks href="/blog" > Blog </HeaderLinks>
+                <HeaderLinks href="/projects" > Projects </HeaderLinks>
+                <HeaderLinks href="/contact" > Contact </HeaderLinks> -->
+            </div>
+            <div class="social-links">
+                <a href={SITE_SOCIAL.github} target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">Go to GitHub repo</span>
+                    <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
+                        <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                </a>
+                <a href={SITE_SOCIAL.linkedin} target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">Go to LinkedIn profile</span>
+                    <svg viewBox="0 0 32 32" aria-hidden="true" width="32" height="32">
+                        <path fill="currentColor" d="M6.71564 3.55714C6.71519 4.50008 6.36099 5.40421 5.73097 6.07063C5.10094 6.73706 4.24669 7.11119 3.35614 7.11072C2.46559 7.11025 1.61169 6.73521 0.982295 6.06812C0.352897 5.40103 -0.000444854 4.49652 4.20334e-07 3.55358C0.000445695 2.61064 0.354642 1.70651 0.984669 1.04008C1.6147 0.373658 2.46895 -0.000471025 3.3595 4.45062e-07C4.25005 0.000471915 5.10394 0.375505 5.73334 1.0426C6.36274 1.70969 6.71608 2.6142 6.71564 3.55714ZM6.81637 9.74346H0.100735V32H6.81637V9.74346ZM17.4271 9.74346H10.745V32H17.3599V20.3207C17.3599 13.8143 25.3683 13.2099 25.3683 20.3207V32H32V17.903C32 6.93473 20.1469 7.34359 17.3599 12.73L17.4271 9.74346Z"/>
+                    </svg>                    
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5em 0;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--white);
+    }
+    a:hover {
+        color: var(--gray-light);
+    }
+
+    .main-menu{
+        display: flex;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .internal-links {
+        display: flex;
+        gap: 1em;
+        font-size: 16px;
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: .7em;
+    }
+
+    nav.container,
+    nav h2,
+    nav .internal-links,
+    nav .social-links svg
+    {
+        transition: all .3s;
+    }
+
+    nav.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--black);
+        z-index: 1000;
+        padding: .5em 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        animation: slideDown 1s forwards;
+    }
+
+    nav.fixed h2 {
+        font-size: 1em;
+    }
+
+    nav.fixed .internal-links {
+        font-size: 14px;
+    }
+
+    nav.fixed .social-links svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+
+</style>
+
+<script>
+    import "../../scripts/header.js"
+</script>
