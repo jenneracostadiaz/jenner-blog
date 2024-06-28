@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import Layout from "../../layouts/Layout.astro";
 import FormattedDate from '../../components/heads/FormattedDate.astro';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -25,7 +26,21 @@ const { Content } = await post.render();
     <main class="container">
         <article>
             <div class="hero-image">
-                {post.data.heroImage && <img width={1020} height={510} src={post.data.heroImage} alt="" />}
+                {post.data.heroImage &&
+                    <Image
+                        src={post.data.heroImage + '.jpg'}
+                        srcset={
+                            `${post.data.heroImage}-thumbnail.webp 450w,` +
+                            `${post.data.heroImage}-medium.webp 768w,` +
+                            `${post.data.heroImage}-large.webp 1024w`
+                        }
+                        sizes="(max-width: 450px) 450px, (max-width: 768px) 768px, 1024px"
+                        alt={post.data.title}
+                        loading="eager"
+                        width="1024"
+                        height="512"
+                    />
+                }
             </div>
             <h1 class="title">{post.data.title}</h1>
             <div class="date"><FormattedDate date={post.data.pubDate} /></div>

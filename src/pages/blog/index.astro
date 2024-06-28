@@ -22,13 +22,20 @@ const posts = (await getCollection('blog')).sort(
             {posts.map((post) => (
                 <article id={post.slug} class="post">
                     <a href={`/blog/${post.slug}`} class="post__item" >
+                        
                         <Image
-                            src={post.data.heroImage ?? ''}
+                            src={post.data.heroImage+'.jpg'}
+                            srcset={
+                                `${post.data.heroImage}-thumbnail.webp 450w,` +
+                                `${post.data.heroImage}-medium.webp 768w,` +
+                                `${post.data.heroImage}-large.webp 1024w`
+                            }
+                            sizes="(max-width: 450px) 450px, (max-width: 768px) 768px, 1024px"
                             alt={post.data.title}
                             class="post__image"
                             loading="eager"
-                            width="450"
-                            height="250"
+                            width="768"
+                            height="432"
                         />
                         <div class="post__content">
                             <div class="date">
@@ -133,7 +140,7 @@ const posts = (await getCollection('blog')).sort(
 
     .post__item .date{
         font-size: 0.8em;
-        font-weight: 200;
+        font-weight: 300;
         color: var(--gray-light);
         margin: 0;
     }

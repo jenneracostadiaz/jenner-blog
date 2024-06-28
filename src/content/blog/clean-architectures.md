@@ -2,7 +2,7 @@
 title: 'Clean Architectures: Organize Your Code'
 description: 'Discover how clean architectures can transform your software project into a well-organized and easy-to-maintain mansion. Learn the basic principles, benefits, and essential components to keep your code modular, decoupled, and testable. Start rocking with cleaner, more organized code today!'
 pubDate: 'Jun 27 2024'
-heroImage: '/blog/galaxy.webp'
+heroImage: '/blog/galaxy'
 ---
 
 Hey everyone! Today we're going to talk about something that will make your code shine like a rockstar: clean architectures! That's right, those magical structures that keep your code organized, maintainable, and chaos-free. Don’t worry, we’re not diving too deep today, just giving it a glance to get you excited about exploring it in future articles.
