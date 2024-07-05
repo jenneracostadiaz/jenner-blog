@@ -48,7 +48,8 @@ const { Content } = await post.render();
             <Content />
             <div class="tags">
                 {post.data.tags?.map((tag: string) => (
-                    <span class="tag">{tag}</span>
+                    // <span class="tag">{tag}</span>
+                    <a href={`/tags/${tag}`} class="tag">{tag}</a>
                 ))}
             </div>
         </article>
