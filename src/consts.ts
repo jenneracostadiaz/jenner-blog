@@ -3,7 +3,7 @@ export const SITE_DESCRIPTION =
 	'Blog about software development and other stuff';
 
 export const SITE_URL = 'https://jenner.pe';
-export const SITE_IMAGE = `${SITE_URL}/images/og-image.png`;
+export const SITE_IMAGE = '/seo/blog-seo.png';
 
 export const SITE_SOCIAL = {
 	github: 'https://github.com/jenneracostadiaz',
