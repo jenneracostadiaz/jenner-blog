@@ -46,6 +46,11 @@ const { Content } = await post.render();
             <h1 class="title">{post.data.title}</h1>
             <div class="date"><FormattedDate date={post.data.pubDate} /></div>
             <Content />
+            <div class="tags">
+                {post.data.tags?.map((tag: string) => (
+                    <span class="tag">{tag}</span>
+                ))}
+            </div>
         </article>
     </main>
 </Layout>
@@ -114,6 +119,32 @@ const { Content } = await post.render();
         h3 {
             font-size: 2.2em;
         }
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em;
+        padding: 1em 0;
+    }
+
+    .tag {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+        text-transform: capitalize;
+        font-weight: 700;
+        /* shadow */
+        text-shadow: 4px 8px 10px rgba(var(--accent-light-rgb), .1);
+    }
+
+    .tag:hover {
+        background-image: var(--accent-gradient-dark);
+        text-shadow: 4px 8px 20px rgba(var(--accent-light-rgb), 0.5);
+
     }
 
 </style>

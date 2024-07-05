@@ -3,6 +3,13 @@ title: '3-Tier Architecture: Starts in software architecture'
 description: 'Discover the 3-tier architecture, a structure that organizes your application into three distinct layers: presentation, business logic, and data. Learn its principles, benefits, and essential components to develop software efficiently and scalably.'
 pubDate: 'Jun 28 2024'
 heroImage: '/blog/via-lactea'
+tags:
+  [
+    'architecture',
+    'software development',
+    '3-tier architecture',
+    'software architectures',
+  ]
 ---
 
 Hey everyone! Today we’re diving into the 3-tier architecture, one of the most commonly used structures for building robust and maintainable applications. So grab your coffee and get ready to understand how this architecture can make your life as a developer much easier.
